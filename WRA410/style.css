@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+	font-family: Helvetica, sans-serif; Verdana, sans-serif;
+	background-color:#6db0a7;
+	margin: 30px;
+	text-align: center;
+	padding: 0;
+	
+}
+
+
+/* Gallery images */
+.container{
+	display: grid;
+	grid-template-columns: repeat(6,1fr);
+	grid-auto-rows: 100px 300px;
+	grid-gap: 20px;
+	grid-auto-flow: dense;
+
+}
+
+
+.gallery-item{
+	max-width; 100%;
+	height: 100%;
+	position: relative;
+	
+}
+
+.gallery-item .image1{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 20px;
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gallery-item .image1 img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position:50% 50%;
+	cursor: pointer;
+	transition: .8s ease-in-out;
+}
+
+.gallery-item:hover .image1 img{
+	transform: scale(1.1);
+}
+.gallery-item .text{
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #FFFFFF;
+	background-color: #013334;
+	font-size: 25px;
+	font-family: Helvetica, sans-serif;
+	pointer-events: none;
+	z-index:4;
+	transition: .3s ease-in-out;
+	
+}
+
+.gallery-item:hover .text{
+	opacity:1;
+	animation: move-down .3s linear;
+	padding: 1em;
+	width: 100%;
+	
+	
+}
+/* Makes text over gallery images appear with animation */
+@keyframes move-down{
+	0%{
+		top:10%;
+	}
+	50%{
+		top:35%;
+	}
+	100%{
+		top:50%;
+	}
+}
+
+/* Widths and heights for gallery images */
+.w-1{
+	grid-column: span 1;
+}
+
+.w-2{
+	grid-column: span 2;
+}
+
+.w-3{
+	grid-column: span 3;
+}
+
+.w-4{
+	grid-column: span 4;
+}
+
+.w-5{
+	grid-column: span 5;
+}
+
+.w-6{
+	grid-column: span 6;
+}
+
+.h-1{
+	grid-row: span 1;
+}
+
+.h-2{
+	grid-row: span 2;
+}
+.h-3{
+	grid-row: span 3;
+}
+.h-4{
+	grid-row: span 4;
+}
+.h-5{
+	grid-row: span 5;
+}
+.h-6{
+	grid-row: span 6;
+}
+
+@media screen and (max-width:500px){
+	.container{	grid-template-coulmns: repeat(2,1fr);
+	}
+}
+
+
+/*creates the grid for the home page*/
+.wrapper{
+	display: grid;
+	grid-template-columns: 40% 58%;
+	grid-gap: 22px;
+	text-align: left;
+	color: #FFFFFF;
+	
+
+}
+.wrapper > div{
+	background: #0d4d4d; 
+	padding: 1em; 
+	border-radius: 18px;
+	 box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 22px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/*controls media layout at bottom of homepage  */
+.container1{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-gap: 20px;
+	padding-top: 30px;
+
+}
+
+
+/* Nav logo */
+
+* {
+  box-sizing: border-box;
+}
+#nav{
+	  
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: right;
+list-style-type: none;
+	background-color: #013334;
+	padding: 30px;
+	padding-bottom: 40px;
+	border: groove;
+	border-color:#FFFFFF;
+	border-radius: 18px;
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 22px 0 rgba(0, 0, 0, 0.19);
+}
+#nav li{
+	display: inline;
+	text-align: center;
+	padding: 48px; 
+
+}
+#nav a{
+	padding: 15px;
+}
+#nav a:hover{
+	background-color: #FFFFFF;
+	border-radius: 40px;
+	
+}
+a {
+  font-weight: bold;
+	color:#FFFFFF; 
+	text-decoration: none;
+	
+}
+
+a:hover {
+	font-weight: bold;
+	color: #000000;
+	
+}
+
+/* misc content */
+
+h1{
+	text-align: center;
+	background-position: center;
+	background-repeat: repeat-x; 
+	background-color: #ffffff;
+	padding-top: 15px; 
+	padding-bottom: 15px;
+	border-radius: 30px;
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 22px 0 rgba(0, 0, 0, 0.19);
+}
+
+h2{
+
+}
+
+#images {
+	height: 100px;
+	width: 140px;
+	display: block;
+	padding: 15px;
+	
+}
+
+#logo{
+	height: 87px; 
+	width: 135px;
+	float: left;
+	padding-top: 9px;
+	padding-left: 20px;
+	padding-bottom: 5px; 
+	
+}
+
+
+/*Image slider */
+#canvas {
+    position: relative; 
+    height: 600px;
+    width: 900px;
+    border: 2px solid black;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow{
+    position: relative; 
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border: 2px solid green;
+    padding: 5px;
+    box-sizing: border-box;
+    background: white;
+    opacity: .8;
+
+}
+
+.image{
+    width: 35px;
+    height: 35px;
+}
+
+.arrow:hover{
+    background-color: green;
+}
+
+footer{
+    margin-top: 50px;
+    text-align: center;
+}
